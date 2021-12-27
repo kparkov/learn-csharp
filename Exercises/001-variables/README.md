@@ -76,49 +76,6 @@ Dette producerer følgende output:
 18
 ```
 
-Et udtryk siges at være boolsk (boolean), hvis der anvendes en boolsk operator. Et boolsk udtryk ender altid med at være enten sandt eller falsk. Boolske udtryk er centrale for kontrolstrukturen i alle programmer.
-
-```csharp
-int age = 42;
-
-bool isChild = age < 18;
-
-// isChild = 42 < 18
-// isChild = false
-
-bool isReadyForRetirement = age >= 65;
-
-// isReadyForRetirement = 42 >= 65
-// isReadyForRetirement = false
-
-bool isExactlyTwenty = age == 20;
-
-// isExactlyTwenty = 42 == 20
-// isExactlyTwenty = false
-
-bool isTeenager = age >= 13 && age < 20;
-
-// isTeenager = 42 >= 13 && 42 < 20
-// isTeenager = true && 42 < 20
-// isTeenager = true && false
-// isTeenager = false
-
-bool isChildOrReadyForRetirement = age < 18 || age >= 65;
-
-// isChildOrReadyForRetirement = 42 < 18 || 42 >= 65
-// isChildOrReadyForRetirement = false || 42 >= 65
-// isChildOrReadyForRetirement = false || false
-// isChildOrReadyForRetirement = false
-
-bool paysFullPrice = age >= 13 && !isReadyForRetirement;
-
-// paysFullPrice = 42 >= 13 && !isReadyForRetirement
-// paysFullPrice = true && !isReadyForRetirement
-// paysFullPrice = true && !false
-// paysFullPrice = true && true
-// paysFullPrice = true
-```
-
 Der er et udvalg af primitive typer, hvoraf vi til at starte med kigger på `string` (tekst), `int` (heltal), `bool` (sandt/falsk), `double` (decimaltal med flydende decimaler) og `decimal` (decimaltal med faste decimaler).
 
 ```csharp

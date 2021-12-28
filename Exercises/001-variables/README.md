@@ -47,7 +47,7 @@ static void Main(string[] args)
 
 I det imperative programmeringsparadigme anskuer vi programmet og maskinen som en øjeblikstilstand, der ved applicering af en transformativ logik bringes i en ny øjeblikstilstand. Bevægelsen er _diskret_, dvs trinvis mellem adskilte tilstande (modsat en kontinuert, glidende og analog tilstandsforandring).
 
-`tilstand A -> handling -> tilstand B -> handling -> tilstand C`
+`tilstand A -> ændring -> tilstand B -> ændring -> tilstand C`
 
 Tilstandens atom er variablen. En variabel er en navngivet kasse i (arbejds)hukommelsen, hvor vi kan gemme en værdi til senere brug. Vi anvender navnet for at referere til den indeholdte værdi. Værdien bag variablen kan skifte, mens navnet forbliver det samme.
 

@@ -28,3 +28,11 @@ System.Console.WriteLine("The new sum is: " + sum);
 // Exercise E: in the two lines preceding this, we are reassigning x. However, we
 // are setting it to the same value as before (10). What happens to 'sum' if we
 // reassign it to a different value? Does it affect 'sum'? Why / why not?
+
+int a = 13;
+int b = 25;
+int c = 57;
+
+// Exercise F: calculate the sum of a, b and c. Output the sum in the console.
+// Note that a new variable cannot be named 'sum', but we can reassign
+// the existing.

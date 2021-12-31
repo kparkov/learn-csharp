@@ -7,11 +7,12 @@
  */
 
 string name = "";
-System.Console.WriteLine();
+System.Console.WriteLine(name);
 
 /**
  * ØVELSE 2: Skriv dit navn i konsollen ved at ændre
  *           initialiseringsværdien af 'name' ovenfor.
+ *           Bekræft, at det står korrekt i konsollen.
  */
 
 int x = 10;
@@ -25,8 +26,8 @@ System.Console.WriteLine("Summen er: " + sum);
  */
 
 /**
- * ØVELSE 4: Sæt et breakpoint på line 13, hvor x bliver erklæret
- *           og initialiseret. Brug "step" feature til at se hvordan y og sum
+ * ØVELSE 4: Sæt et breakpoint på linien ovenfor, hvor 'x' bliver erklæret
+ *           og initialiseret. Brug "step" feature til at se hvordan 'y' og 'sum'
  *           bliver tildelt værdier.
  */
 

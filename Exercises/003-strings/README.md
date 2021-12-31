@@ -1,1 +1,0 @@
-## Manipulation af strings

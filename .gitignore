@@ -2,6 +2,9 @@
 bin/
 obj/
 
+# Visual Studio
+.vs/
+
 # Rider
 .idea/
 Folder.DotSettings.user

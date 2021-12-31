@@ -110,11 +110,7 @@ double circumference = 2 * radius * pi;
 
 Konsekvensen af den øjeblikkelige evaluering er, at hvis vi senere ændrer `radius`, så forbliver `circumference` uændret.
 
+## Øvelser
 
-### Afrunding (10 min)
-
-- Github: hvordan I kan gemme løsningen på jeres øvelser til senere.
-- Repetitionsøvelser. I kan løse dem nu eller til næste gang.
-- Førstehåndsindtryk
-  - Fungerer formen?
-  - Er 2 timer passende? Skal vi eventuelt skrue op eller ned?
+- Åbn projektet `src/KVP.LearnCSharp.Variables/KVP.LearnCSharp.Variables.csproj` i enten Visual Studio eller Rider.
+- Åbn filen `Program.cs` og fortsæt med øvelsesbeskrivelserne i filen.

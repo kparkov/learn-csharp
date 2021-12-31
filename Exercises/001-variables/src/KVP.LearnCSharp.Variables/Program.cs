@@ -1,38 +1,49 @@
-﻿System.Console.WriteLine("Hello, World!");
+﻿System.Console.WriteLine("Hej Verden!");
 
-// Exercise A: Make this program run, and verify that
-// System.Console.WriteLine will output 'Hello, world!' when
-// we run it.
+/**
+ * ØVELSE 1: Få programmet til at køre, og bekræft at
+ *           System.Console.WriteLine udskriver 'Hej Verden!' som
+ *           det første i konsollen.
+ */
 
 string name = "";
 System.Console.WriteLine();
 
-// Exercise B: write your name to the console by changing the
-// initialization value of 'name' above.
+/**
+ * ØVELSE 2: Skriv dit navn i konsollen ved at ændre
+ *           initialiseringsværdien af 'name' ovenfor.
+ */
 
 int x = 10;
 int y = 0;
 int sum = x + y;
-System.Console.WriteLine("The sum is: " + sum);
+System.Console.WriteLine("Summen er: " + sum);
 
-// Exercise C: Make sum = 18 by changing y.
-// Verify that the output show the correct sum.
+/**
+ * ØVELSE 3: Løs sum = 18 ved at ændre på y.
+ *           Bekræft at det korrekte resultat står i konsollen.
+ */
 
-// Exercise D: set a breakpoint at line 13, where x is declared
-// and initialized. Use the "step" feature to see how y and sum is
-// assigned.
+/**
+ * ØVELSE 4: Sæt et breakpoint på line 13, hvor x bliver erklæret
+ *           og initialiseret. Brug "step" feature til at se hvordan y og sum
+ *           bliver tildelt værdier.
+ */
 
 x = 10;
-System.Console.WriteLine("The new sum is: " + sum);
+System.Console.WriteLine("Den nye sum er: " + sum);
 
-// Exercise E: in the two lines preceding this, we are reassigning x. However, we
-// are setting it to the same value as before (10). What happens to 'sum' if we
-// reassign it to a different value? Does it affect 'sum'? Why / why not?
+/**
+ * ØVELSE 5: i de to linier over denne giver vi x en ny værdi og udskriver summen.
+ *           Vi sætter dog x til det samme som før (10)! Hvad sker der med 'sum', 
+ *           hvis vi tildeler 'x' en anden værdi? Påvirker det 'sum'? Hvorfor / hvorfor ikke?
+ */
 
 int a = 13;
 int b = 25;
 int c = 57;
 
-// Exercise F: calculate the sum of a, b and c. Output the sum in the console.
-// Note that a new variable cannot be named 'sum', but we can reassign
-// the existing.
+/**
+ * ØVELSE 6: Udregn summen af 'a', 'b' og 'c'. Skriv summen i konsollen.
+ *           Bemærk, at vi ikke må erklære en ny variabel med navnet 'sum'.
+ */

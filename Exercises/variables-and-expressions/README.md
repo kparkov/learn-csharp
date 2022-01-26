@@ -1,12 +1,14 @@
 ## Variabler og udtryk
 
-I det imperative programmeringsparadigme anskuer vi programmet og maskinen som en øjeblikstilstand, der ved applicering af en transformativ logik bringes i en ny øjeblikstilstand. Bevægelsen er _diskret_, dvs trinvis mellem adskilte tilstande (modsat en kontinuert, glidende og analog tilstandsforandring).
+I det imperative programmeringsparadigme anskuer vi programmet og maskinen som en øjeblikstilstand, der ved applicering af en transformativ logik bringes i en ny øjeblikstilstand. Bevægelsen er _diskret_, dvs trinvis mellem adskilte tilstande (modsat en kontinuert, glidende og analog tilstandsforandring). 
+
+Det kan visualiseres sådan:
 
 `tilstand A -> handling -> tilstand B -> handling -> tilstand C`
 
-Tilstandens atom er variablen. En variabel er en navngivet kasse i (arbejds)hukommelsen, hvor vi kan gemme en værdi til senere brug. Vi anvender navnet for at referere til den indeholdte værdi. Værdien bag variablen kan skifte, mens navnet forbliver det samme.
+Maskinens "Tilstanden" er en kompleks størrelse, men dens mindste bestanddel er _variablen_. En variabel er en navngivet kasse i (arbejds)hukommelsen, hvor vi kan gemme en værdi til senere brug. Vi anvender navnet for at referere til den indeholdte værdi. Værdien bag variablen kan skifte, mens navnet forbliver det samme.
 
-En variabel _erklæres_ (declaration) altid med en type og et navn.
+En variabel _erklæres_ (declaration) altid med en _type_ og et _navn_.
 
 ```csharp
 // Jeg erklærer / der er et heltal (integer), der hedder 'x'.
@@ -16,10 +18,10 @@ int x;
 En variabel kan _initialiseres_ til et _udtryk_ (expression) i samme ombæring. Et udtryk _kan evalueres_ til en enkelt værdi. Værdier er dermed udtryk, men et udtryk er ikke nødvendigvis en værdi.
 
 ```csharp
-// Der er et heltal, der hedder 'x', og det har værdien 7.
+// 'x' er et heltal, og det har værdien 7.
 int x = 7;
 
-// Der er et heltal, der hedder 'y', og det har værdien, der er resultatet af 10 + 8.
+// 'y' er et heltal, og det har værdien, der er resultatet af 10 + 8.
 int y = 10 + 8;
 
 System.Console.WriteLine(y);
@@ -31,7 +33,7 @@ Dette producerer følgende output:
 18
 ```
 
-Der er et udvalg af primitive typer, hvoraf vi til at starte med kigger på `string` (tekst), `int` (heltal), `bool` (sandt/falsk), `double` (decimaltal med flydende decimaler) og `decimal` (decimaltal med faste decimaler).
+Heltal / `int` er en **type**. Alle variabler har en type. Der er et udvalg af typer, hvoraf vi til at starte med kigger på `string` (tekst), `int` (heltal), `bool` (sandt/falsk), `double` (decimaltal med flydende decimaler) og `decimal` (decimaltal med faste decimaler).
 
 ```csharp
 string president = "Vladimir Putin";
@@ -41,7 +43,17 @@ double pi = 3.1415;
 decimal balance = 1275.50m;
 ```
 
-En variabel kan opdateres efter erklæring. Dette 
+En variabel kan erklæres uden at angive typen, men _kun_ hvis den samtidig initialiseres til en utvetydig værdi.
+
+```csharp
+var president = "Vladimir Putin";
+var birthyear = 1985;
+var doorIsOpen = true;
+```
+
+Effekten er den samme som ovenfor.
+
+En variabel kan opdateres efter erklæring: 
 
 ```csharp
 int x = 0;
@@ -64,6 +76,15 @@ double circumference = 2 * radius * pi;
 ```
 
 Konsekvensen af den øjeblikkelige evaluering er, at hvis vi senere ændrer `radius`, så forbliver `circumference` uændret.
+
+En variabel kan efter erklæring _aldrig ændre type_. Det er altså kun værdien, der kan ændres.
+
+```csharp
+int x = 27;
+
+// Dette kan ikke lade sig gøre:
+x = "Tekst";
+```
 
 ## Øvelser
 

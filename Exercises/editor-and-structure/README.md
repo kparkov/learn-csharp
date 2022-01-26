@@ -94,7 +94,7 @@ Dette leder altså f.eks. til en struktur, der spejler det ovenstående program.
 }
 ```
 
-Når vi kommer længere frem, bliver sådanne strukturer længere og mere komplekse, men vil overordnet set være opbygget af samme klodser.
+Når vi kommer længere frem, bliver sådanne strukturer længere og mere komplekse, men vil overordnet set være opbygget af samme klodser:
 
 ```csharp
 <udsagn>;

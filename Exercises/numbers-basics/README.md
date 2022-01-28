@@ -1,3 +1,3 @@
-## Tal og regning
+## Tal og matematiske udtryk
 
 

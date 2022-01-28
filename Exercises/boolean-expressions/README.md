@@ -43,10 +43,6 @@ De relationelle operatorer er som følger (ved fortsat brug af `age`-eksemplet):
 - `age == value`: sandt, hvis `age` er præcis lig med `value`.
 - `age != value`: sandt, hvis `age` ikke er lig med `value`.
 
-```csharp
-
-```
-
 ### Datatyper og relationelle operatorer
 
 I det ovenstående eksempel var både `age` og den sammenlignede værdi af typen `int`, og det er umiddelbart intuitivt, at et tal kan være højere, lavere eller lig med et andet tal. 
@@ -97,3 +93,98 @@ bool paysFullPrice = age >= 13 && !isReadyForRetirement;
 // paysFullPrice = true && true
 // paysFullPrice = true
 ```
+
+### Kontrolstrukturen `if / else if / else`
+
+Vi kan benytte booleans og boolske udtryk i `if / else if / else`-strukturen. Den simpleste form er som følger, hvor vi kun anvender `if`:
+
+```csharp
+bool doorIsOpen = true;
+
+System.Console.WriteLine("Døren er...");
+
+if (doorIsOpen) 
+{
+    System.Console.WriteLine("ÅBEN!");
+    System.Console.WriteLine("Kom indenfor!"); 
+}
+
+System.Console.WriteLine("Programmet er slut.");
+```
+
+Outputtet bliver:
+
+```
+Døren er...
+ÅBEN!
+Kom indenfor!
+Programmet er slut.
+```
+
+Men hvis vi ændrer koden, så `doorIsOpen` initialiseres til `false`, så vil outputtet være:
+
+```
+Døren er...
+Programmet er slut.
+```
+
+Koden i `if`-blokken eksekverer, hvis udtrykket i parentesen efter `if` er sand. Uanset om koden eksekverer eller ej, fortsætter programmet bagefter på den anden side af kodeblokken.
+
+Da det virker lidt uafsluttet, når betingelsen er falsk, kan vi skrive en alternativ strategi for dette tilfælde, kaldet `else`:
+
+```csharp
+bool doorIsOpen = false;
+
+System.Console.WriteLine("Døren er...");
+
+if (doorIsOpen) 
+{
+    System.Console.WriteLine("ÅBEN!");
+    System.Console.WriteLine("Kom indenfor!"); 
+}
+else
+{
+    System.Console.WriteLine("LUKKET!");
+    System.Console.WriteLine("Bliv ude!"); 
+}
+
+System.Console.WriteLine("Programmet er slut.");
+```
+
+Nu vil `else`-blokken altid blive ramt, hvis `if`-blokken ikke bliver det. Det nye output bliver:
+
+```
+Døren er...
+LUKKET!
+Bliv ude!
+Programmet er slut.
+```
+
+Dette giver en enten/eller udfald. Den kan udvides med yderligere muligheder i den fulde `if / else if / else`-konstruktion.
+
+```csharp
+bool doorIsOpen = false;
+bool isOwner = true;
+
+System.Console.WriteLine("Døren er...");
+
+if (doorIsOpen) 
+{
+    System.Console.WriteLine("ÅBEN!");
+    System.Console.WriteLine("Kom indenfor!"); 
+}
+else if (isOwner) 
+{
+    System.Console.WriteLine("Lukket, men ejeren må altid komme ind.");
+    System.Console.WriteLine("Velkommen hjem.");
+}
+else
+{
+    System.Console.WriteLine("LUKKET!");
+    System.Console.WriteLine("Bliv ude!"); 
+}
+
+System.Console.WriteLine("Programmet er slut.");
+```
+
+Der kan være flere `else if`-blokke. Kun ét af alle de mulige udfald kan blive eksekveret, og mere bestemt den første positive betingelse vil lede til eksekvering - også selvom

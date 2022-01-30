@@ -112,3 +112,8 @@ Programkørslen kan visualiseres således:
 
 ### Øvelser
 
+- Åbn solution `/Exercises/basic-functions/src/KVP.LearnCSharp.BasicFunctions.sln`.
+- Gå til `Tests.cs`.
+- Læs øvelsesbeskrivelsen før hver test, og modificér i `Calculator.cs` for at få tests til at bestå.
+
+**Bemærk** at koden i selve tests'ne er for vanskelige at forstå på dette niveau. Det er forventeligt. Hold dig i stedet til opgaveteksten.

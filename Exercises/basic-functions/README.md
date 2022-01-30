@@ -75,7 +75,7 @@ Dette program udskriver:
 18
 ```
 
-Bemærk, at tallet hedder `number` i den kaldende kontekst (`Main`), men når funktionen har modtaget værdien, kaldes det samme tal `x`. Dette er en konsekvens af, at både `number` og `x` er variabler, der kun eksisterer i det lokale scope, dvs den omgivende kodeblok. Værdien bringes videre, men under et nyt navn.
+Bemærk, at tallet hedder `number` i den kaldende kontekst (`Main`), men når funktionen har modtaget værdien, kaldes det samme tal `x`. Dette er en konsekvens af, at både `number` og `x` er variabler, der kun eksisterer i det lokale scope, dvs den omgivende kodeblok. Værdien bringes videre, men de to kontekster kender værdien under forskellige navne.
 
 Bemærk desuden, at eftersom `AddOne` lover en returværdi af typen `int`, så skal der følge et udtryk af typen `int` efter `return`.
 

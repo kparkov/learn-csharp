@@ -1,3 +1,0 @@
-## Tal og matematiske udtryk
-
-

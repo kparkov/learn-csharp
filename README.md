@@ -5,4 +5,5 @@ A collection of C# tutorials and exercises
 2. [Variabler og udtryk](Exercises/variables-and-expressions/README.md)
 3. [Tests](Exercises/tests/README.md)
 4. [Introduktion til funktioner](Exercises/basic-functions/README.md)
-5. [Tal og tekst](Exercises/numbers-and-strings/README.md)
+5. [Introduktion til tal](Exercises/basic-numbers/README.md)
+6. 

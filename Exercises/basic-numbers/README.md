@@ -1,13 +1,11 @@
-## Tal og tekst
+## Introduktion til at anvende tal
 
-Tekst og tal er blandt de basale datatyper, som vi bruger hele tiden i programmering. Der er to tekst-typer, 10 heltalstyper (ja, hele 10 typer kun til tal uden decimaler) og 3 typer til decimaltal. 
+Tal er blandt de basale datatyper, som vi bruger hele tiden i programmering. Der er 10 heltalstyper (ja, hele 10 typer kun til tal uden decimaler) og 3 typer til decimaltal. 
 
-Men lad os holde os til de nødvendige (og klart mest hyppigt forekommende) lige nu:
+Dog benytter vi kun under normale omstændigheder en håndfuld, så lad os holde os til de nødvendige (og klart mest hyppigt forekommende) lige nu:
 
 | Datatype  | Navn                                            | Kategori  | Størrelse          | Beskrivelse                                                                       | 
 | --------- | ----------------------------------------------- | --------- | ------------------ | --------------------------------------------------------------------------------- |
-| `string`  | Streng (string)                                 | Reference | Dynamisk (max 2GB) | En tekst.                                                                         |
-| `char`    | Karakter (character)                            | Værdi     | 16 bits            | 1 unicode karakter.                                                               |
 | `int`     | Heltal (integer)                                | Værdi     | 32 bits            | Et heltal fra -2.147.483.648 til 2.147.483.647                                    |
 | `long`    | Stort heltal (long integer)                     | Værdi     | 64 bits            | Et heltal fra -9.223.372.036.854.775.808 til 9.223.372.036.854.775.807            |
 | `float`   | Flydende decimaltal (floating point number)     | Værdi     | 32 bits            | Fysiske og naturlige decimaltal med uendelig decimalrække og aftagende præcision. |
@@ -19,12 +17,6 @@ Men lad os holde os til de nødvendige (og klart mest hyppigt forekommende) lige
 Når vi skal angive en type indenfor en konkret type, så er der bestemt formater vi anvender. Man kunne måske tro, at erklæringen af typen var nok, men somme tider anvender vi en konkret værdi uden en forudgående, utvetydig erklæring. Når vi f.eks. bruger `var`-formen til at eklære en variabel, ville det ikke være muligt at skelne om det er `int` eller `long` der tilsigtes, hvis tallet ikke overstiger grænsen for `int`. Det gøres med den konkrete form.
 
 ```csharp
-// string
-var myString = "Dette er min tekst.";
-
-// char
-var myChar = 'C';
-
 // int
 var myInt = 16;
 
@@ -127,6 +119,29 @@ x += 3;    // svarer til: x = x + 3
 // x = 10
 ```
 
+Denne logik gælder også for andre operatorer.
+
+```csharp
+int x = 10;
+x = x - 3;
+
+// x = 7
+
+x -= 3;
+
+// x = 4
+
+x *= 5;
+
+// x = 20
+
+x /= 2;
+
+// x = 10
+
+x %= 
+```
+
 Hvis man anvender blandede typer i et udtryk, skal man sikre sig, at den resulterende værdi er af den ønskede type. Dette vil ikke kompilere:
 
 ```csharp
@@ -142,24 +157,51 @@ Præcedensen af operatorer er som i matematikken - multiplikation før plus osv.
 
 Se eventuelt [den fulde tabel over operator-præcedens i C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence).
 
-### `char` og `string`
+### Modulo operator
 
-Tekst er simplest i den forstand, at der kun findes to datatyper til at angive tekst: `char`, der svarer til et enkelt tegn, og `string`, der svarer til flere tegn, mange tegn, potentielt set hele bøger i en enkelt variabel.
-
-```csharp
-char myCharacter = 'B';
-string myText = "This is a text.";
-```
-
-#### Den specielle værdi `null`
-
-Som det fremgår af ovenstående tabel, er kun `string` i kategorien "Reference-type". Alle de øvrige er "Værdi-typer". De præcise implikationer af dette er vidtrækkende, men lige nu skal vi ikke vide andet end, at reference-typer udover deres typebestemte værdirum også kan være den specielle værdi `null`.
-
-Dette betyder grundlæggende, at variablen kan have en værdi, eller være ingenting.
+En operator, som vi ikke ser meget i almindelig hovedregning, men som er fremtrædende i programmering, er modulo-operatoren `%`. Den returnerer rest efter division.
 
 ```csharp
-string myString = null;
+int x = 20;
+int y = x % 6;
+
+// y = 2, fordi 6 går 3 gange op i 20 - 3 * 6 = 18, med en rest på 2.
 ```
+
+Der er mange eksempler, hvor vi bruger modulo. Ønsker vi fx at udskrive en status hver gang vi har udført 200 opgaver, så kan vi benytte modulo på opgave-tælleren.
+
+```cs
+int tasksDone = 0;
+int tasksLeft = 15000;
+
+while (tasksLeft > 0)
+{
+    // Udfør opgaven her.
+
+    tasksDone = tasksDone + 1;
+    tasksLeft = tasksLeft - 1;
+
+    // Hvis resten af tasksDone divideret med 200 er lig med 0, så gør følgende...
+    if (tasksDone % 200 == 0) 
+    {
+        System.Console.WriteLine("Har udført " + tasksDone + " opgaver.");
+    }
+}
+```
+
+Dette udskriver:
+
+```
+Har udført 200 opgaver.
+Har udført 400 opgaver.
+Har udført 600 opgaver.
+Har udført 800 opgaver.
+Har udført 1000 opgaver.
+Har udført 1200 opgaver.
+...
+```
+
+
 
 #### Newline
 

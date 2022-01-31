@@ -2,7 +2,7 @@
 >
 > Ada Lovelace (1815 - 1852), verdens første programmør 
 
-## Boolean expressions
+## Bool'ske udtryk
 
 Et udtryk siges at være boolsk (boolean), hvis der anvendes en boolsk operator. Et boolsk udtryk ender altid med at være enten sandt eller falsk. Boolske udtryk er centrale for _kontrolstrukturen_ i alle programmer.
 

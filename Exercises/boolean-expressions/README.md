@@ -17,7 +17,6 @@ Vi kan producere en boolsk værdi med et boolsk udtryk. Et boolsk udtryk er et u
 
 ```csharp
 int age = 42;
-
 bool isChild = age < 18;
 ```
 
@@ -43,13 +42,9 @@ De relationelle operatorer er som følger (ved fortsat brug af `age`-eksemplet):
 - `age == value`: sandt, hvis `age` er præcis lig med `value`.
 - `age != value`: sandt, hvis `age` ikke er lig med `value`.
 
-### Datatyper og relationelle operatorer
+De logiske operatorer sammenføjer to boolske udtryk. Lad os forestille os 
 
-I det ovenstående eksempel var både `age` og den sammenlignede værdi af typen `int`, og det er umiddelbart intuitivt, at et tal kan være højere, lavere eller lig med et andet tal. 
-
-Men faktisk kan mange datatyper være genstand for sammenligning med boolean expressions. Måden de sammenlignes afhænger af typen. Fx vil to variabler af typen `string` blive sammenlignet ud fra alfabetisk (leksikografisk) sortering: `"A"` er lavere end `"B"`, osv.
-
-Der er dog ingen garanti for, at en sammenligning kan lade sig gøre. Fx er udtrykket `true > "hej"` meningsløst, eller i hvert fald uforudsigeligt.
+- `bool1 && bool2`
 
 
 

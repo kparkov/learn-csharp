@@ -28,4 +28,21 @@ Som det fremgår af ovenstående tabel, er `string` i kategorien "Reference-type
 string myString = null;
 ```
 
-### 
+#### Newline
+
+#### Escape character
+
+### `string`-metoder
+
+```csharp
+// Substring skærer en del af teksten ud, baseret på start- og slutposition.
+"Hello there".Substring(2)              // = "llo there"
+"Hello there".Substring(2, 3)           // = "llo"
+
+// Replace 
+
+// Trim, TrimStart og TrimEnd fjerner whitespace før og efter
+"      Hello there   ".TrimStart();     // = "Hello there   "
+"      Hello there   ".Trim();          // = "Hello there"
+
+```

@@ -8,7 +8,19 @@ En boolean (`bool`) er den mest elementære datatype, og svarer til den korteste
 
 Et boolsk udtryk (boolean expression) er et udtryk, der evalueres til en boolsk værdi. Resultatet af et boolsk udtryk er `true` eller `false`. Det er på denne måde analogt til et aritmetisk udtryk, der kan evalueres til en numerisk værdi. Boolske udtryk er centrale for _kontrolstrukturen_ i alle programmer. Boolske udtryk kan indeholde boolske værdier, men kan også produceres ud fra andre datatyper i kombination med _relationelle operatorer_.
 
-Kontrolstrukturen styrer den overordnede eller detaljerede retning i programmet, dvs forgreningerne i programmet. Alle forgreninger i et program er baseret på et boolsk udtryk - hvis A er sandt, så 1; hvis falsk, så 2. Et valg med flere forgreninger end to kan reduceres til et boolsk valg: hvis A er sandt, så 1; hvis falsk, så hvis B er sandt, så 2; hvis falsk, så 3. Denne helt basale kontrolstruktur kaldes `if / else` (to udfald) eller `if / else if / else` (flere udfald).
+Kontrolstrukturen styrer den overordnede eller detaljerede retning i programmet, dvs forgreningerne i programmet. Alle forgreninger i et program er baseret på et boolsk udtryk: 
+
+- hvis A er sandt, så 1
+- hvis falsk, så 2. 
+
+Et valg med flere forgreninger end to kan reduceres til et boolsk valg: 
+
+- hvis A er sandt, så 1
+- hvis falsk, så: 
+  - hvis B er sandt, så 2 
+  - hvis falsk, så 3. 
+
+Denne helt basale kontrolstruktur kaldes `if / else` (to udfald) eller `if / else if / else` (flere udfald).
 
 Det enkleste boolske udtryk er at sætte en variabel til en boolsk værdi (boolean value):
 
@@ -56,14 +68,14 @@ De logiske operatorer sammenføjer to boolske udtryk. Lad os forestille os, at v
 
 #### Sandhedstabeller
 
-Forskellen i de logiske operatorer kan illustreres med en sandhedstabel.
+Forskellen i de logiske operatorer kan illustreres med en sandhedstabel. Vi tager udgangspunkt i to boolske udtryk, `p` og `q`, og viser så resultatet af NOT, AND, OR og XOR. Bemærk at NOT kun opererer på ét udtryk `p`, mens de andre opererer på begge.
 
-| `p`     | `q`     | `!p`    | `p && q` | <code>p &#124;&#124; q</code> | `p ^ q` |
-| ------- | ------- | ------- | -------- | ----------------------------- | ------- |
-| `true`  | `true`  | `false` | `true`   | `true`                        | `false` |
-| `true`  | `false` | `false` | `false`  | `true`                        | `true`  |
-| `false` | `true`  | `true`  | `false`  | `true`                        | `true`  |
-| `false` | `false` | `true`  | `false`  | `false`                       | `false` |
+| `p`     | `q`     | `!p` (NOT) | `p && q` (AND) | <code>p &#124;&#124; q</code> (OR) | `p ^ q` (XOR) |
+| ------- | ------- | ---------- | -------------- | ---------------------------------- | ------------- |
+| `true`  | `true`  | `false`    | `true`         | `true`                             | `false`       |
+| `true`  | `false` | `false`    | `false`        | `true`                             | `true`        |
+| `false` | `true`  | `true`     | `false`        | `true`                             | `true`        |
+| `false` | `false` | `true`     | `false`        | `false`                            | `false`       |
 
 ### Eksempler på blandet brug
 
@@ -104,7 +116,7 @@ bool isChildOrReadyForRetirement = age < 18 || age >= 65;
 // isChildOrReadyForRetirement = false || false
 // isChildOrReadyForRetirement = false
 
-bool shouldPayFullPrice = age >= 13 && !isReadyForRetirement;
+bool shouldPayFullPrice = age >= 13 && !isReadyForRetirement; // Bemærk! Anvender værdi ovenfor!
 
 // shouldPayFullPrice = 42 >= 13 && !isReadyForRetirement
 // shouldPayFullPrice = true && !isReadyForRetirement
@@ -114,21 +126,16 @@ bool shouldPayFullPrice = age >= 13 && !isReadyForRetirement;
 ```
 ### De Morgans love
 
-Vi kan vende et helt udtryk om med NOT-operatoren. Hvis `x && y` er sandt, hvis både `x` og `y` er sandt, så er `!(x && y)` sand, hvis de _ikke_ begge er sande. Dette er logisk ækvivalent til `(!x || !y)`, som er sandt, hvis enten x eller y ikke er sande.
+Vi kan vende et helt udtryk om med NOT-operatoren. `p && q` er sandt, hvis både `p` og `q` er sandt, så `!(p && q)` er sand, hvis de _ikke_ begge er sande. Dette er logisk ækvivalent til `(!p || !q)`, som er sandt, hvis enten `p` eller `q` ikke er sande.
 
 Disse regler for invertering kaldes De Morgans love:
 
 ```csharp
-!(x || y) == (!x && !y)
-!(x && y) == (!x || !y)
+!(p || q) == (!p && !q)
+!(p && q) == (!p || !q)
 ```
 
-Det som De Morgans love bedst illustrerer er, at det samme udtryk kan siges på flere måder, og der er meget stor forskel på, om det er menneskeligt / intuitivt forståeligt.
-
-### Sandhedstabeller
-
-
-
+Når et boolsk udtryk forekommer uforståeligt, kan det somme tider betyde, at det ikke lader sig forklare med enkelt, naturligt sprog. De Morgans Love viser os, at et sådant udtryk ofte kan rekonstrueres i et mere læseligt format.
 
 ### Kontrolstrukturen `if / else if / else`
 
@@ -223,4 +230,32 @@ else
 System.Console.WriteLine("Programmet er slut.");
 ```
 
-Der kan være flere `else if`-blokke. Kun ét af alle de mulige udfald kan blive eksekveret, og mere bestemt den første positive betingelse vil lede til eksekvering - også selvom flere betingelser i rækken er opfyldt.
+Der kan være flere `else if`-blokke. Kun ét af alle de mulige udfald kan blive eksekveret, og mere bestemt den første positive betingelse vil lede til eksekvering - også selvom flere betingelser i rækken er opfyldt. `else`-blokken er stadig valgfri, og kører kun, når ingen betingelser var opfyldt.
+
+```csharp
+int age = 13;
+decimal price = 100m;
+
+if (age <= 5)
+{
+    price = 0m;
+}
+else if (age <= 15)
+{
+    price = 20m;
+}
+else if (age <= 25 || age >= 65)
+{
+    price = 50m;
+}
+
+// Hvad er prisen, når programmet er nået hertil?
+
+```
+
+Prisen ender med at være `20`, fordi det er den første betingelse, der er sand. Den efterfølgende betingelse (som også er sand) vil ikke engang blive tjekket. Rækkefølgen af betingelser kan derfor være afgørende.
+
+### Øvelser
+
+- Åbn `/Exercises/boolean-expressions/KVP.LearnCSharp.BooleanExpressions.sln`.
+- 

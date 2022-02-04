@@ -255,7 +255,38 @@ else if (age <= 25 || age >= 65)
 
 Prisen ender med at være `20`, fordi det er den første betingelse, der er sand. Den efterfølgende betingelse (som også er sand) vil ikke engang blive tjekket. Rækkefølgen af betingelser kan derfor være afgørende.
 
+### Tidlig `return`
+
+Når `return` optræder i en funktion, terminerer den straks efter. Vi kan skrive `return` mange gange i en funktion, f.eks. også inde i en `if`-sætning. Dette kan hjælpe til at reducere kompleksiteten, fordi det hurtigt bliver klart, hvilke kombinationer af parametre, der er håndteret og afsluttet. 
+
+Vi omskriver nu den ovenstående til en mere direkte læsbar udgave.
+
+```csharp
+public static decimal GetPrice(int age)
+{
+    if (age <= 5)
+    {
+        return 0m;
+    }
+    else if (age <= 15)
+    {
+        return 20m;
+    }
+    else if (age <= 25 || age >= 65)
+    {
+        return 50m;
+    }
+    else 
+    {
+        return 100m;
+    }
+}
+```
+
+Bemærk, at denne nye udgave eksplicitterer det forhold, at _standard-prisen er 100_, og at det er et fjerde udfald, der har sin egen betingelse (betingelsen er, at ingen af de andre betingelser er sande). Før var dette fjerde udfald implicit og skjult.
+
 ### Øvelser
 
 - Åbn `/Exercises/boolean-expressions/KVP.LearnCSharp.BooleanExpressions.sln`.
-- 
+- Åbn klassen `Tests.cs`, og læs opgavebeskrivelserne. 
+- Alle øvelser skal løses ved at modificere `

@@ -1,4 +1,4 @@
-## Introduktion til funktioner
+## Funktioner
 
 En funktion (function) er et afgrænset stykke programkode, der, når det _kaldes_ fra anden kode, bliver kørt / evalueret fra toppen, og kører indtil funktionen _returnerer_ eller naturligt terminerer (når til slutningen). Herefter fortsætter programmet derfra, hvor funktionen blev kaldt, eventuelt med et overført resultat fra funktionen. En funktion kan kaldes flere eller mange gange.
 

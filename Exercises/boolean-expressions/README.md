@@ -4,7 +4,7 @@
 
 ## Bool'ske udtryk
 
-En boolean (`bool`) er den mest elementære datatype, og svarer til den korteste information mulig, 1 bit. Den er enten `true` eller `false`, men kan også bruges til andre binære svar - tændt / slukket, ja / nej, etc. 
+En boolean (`bool`) er den mest elementære datatype, og svarer til den korteste information mulig: 1 bit. Den er enten `true` eller `false`, men kan også bruges til andre binære svar - tændt / slukket, ja / nej, etc. 
 
 Et boolsk udtryk (boolean expression) er et udtryk, der evalueres til en boolsk værdi. Resultatet af et boolsk udtryk er `true` eller `false`. Det er på denne måde analogt til et aritmetisk udtryk, der kan evalueres til en numerisk værdi. Boolske udtryk er centrale for _kontrolstrukturen_ i alle programmer. Boolske udtryk kan indeholde boolske værdier, men kan også produceres ud fra andre datatyper i kombination med _relationelle operatorer_.
 
@@ -284,6 +284,19 @@ public static decimal GetPrice(int age)
 ```
 
 Bemærk, at denne nye udgave eksplicitterer det forhold, at _standard-prisen er 100_, og at det er et fjerde udfald, der har sin egen betingelse (betingelsen er, at ingen af de andre betingelser er sande). Før var dette fjerde udfald implicit og skjult.
+
+### En lille note om misanvendelse
+
+Det er fristende at bruge booleans til alle udfald, der er binære. Hvis man f.eks. skal holde styr på, om en brik i et skakspil er sort eller hvid, kunne man vælge at implementere det som `bool isWhite` med `true` = hvid og `false` = sort. Tilsvarende er det historisk hyppigt observeret, at man har gemt personers køn med `true` = mand og `false` = kvinde (og symptomatisk nok ofte ikke omvendt...)
+
+Undlad at anvende booleans på denne måde, medmindre hver bit tæller. Der er flere problemer med det:
+
+- Det er ulogisk, at `isWhite = false` medfører, at brikken er sort, medmindre det anskues i sit domæne (skakspillet).
+- `true` og `false` bliver pludselig komplet ubrugelige termer til at beskrive hvad data rent faktisk er. Kun sammenholdt med sit feltnavn giver det mening. Vi får senere mulighed for at bruge `enum`, som er vores egne datatype til sæt af valgmuligheder, og her kan man så definere `White`, `Black`, `Male`, `Female`, etc.
+- Tilsyneladende binære valg har det med at blive non-binære, som mange, der har implementeret felter til køn har erfaret i nyere tid.
+- Selv når et valg er binært, er der ofte også brug for ikke-valg som `Unspecified`, `Undecided`, `Other`, når data skal gemmes og/eller anvendes.
+
+
 
 ### Øvelser
 

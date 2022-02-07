@@ -20,7 +20,7 @@ Et valg med flere forgreninger end to kan reduceres til et boolsk valg:
   - hvis B er sandt, så 2 
   - hvis falsk, så 3. 
 
-Denne helt basale kontrolstruktur kaldes `if / else` (to udfald) eller `if / else if / else` (flere udfald).
+Denne helt basale kontrolstruktur kaldes `if / else` (to udfald) eller `if / else if / else` (flere udfald). Denne vender vi tilbage til.
 
 Det enkleste boolske udtryk er at sætte en variabel til en boolsk værdi (boolean value):
 
@@ -302,4 +302,4 @@ Undlad at anvende booleans på denne måde, medmindre hver bit tæller. Der er f
 
 - Åbn `/Exercises/boolean-expressions/KVP.LearnCSharp.BooleanExpressions.sln`.
 - Åbn klassen `Tests.cs`, og læs opgavebeskrivelserne. 
-- Alle øvelser skal løses ved at modificere `
+- Alle øvelser skal løses ved at modificere `Expressions.cs`.

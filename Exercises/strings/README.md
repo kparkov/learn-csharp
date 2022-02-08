@@ -74,15 +74,6 @@ System.Console.WriteLine(s.Equals("HELLO THERE!", StringComparison.CurrentCultur
 System.Console.WriteLine(s.Equals("HELLO THERE!", StringComparison.CurrentCulture)); // false
 ```
 
-### Newline
-
-
-
-### Escape character
-
-
-
-
 
 ### `string`-metoder
 

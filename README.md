@@ -29,7 +29,7 @@ En samling C# tutorials og øvelser.
 25. `struct`.
 26. `record`.
 27. Nedarvning.
-28. Polymorphism og overrides.
+28. Polymorfisme, virtual og override.
 29. `HashSet`.
 30. `Queue` og `Stack`.
 31. Abstrakte klasser.
